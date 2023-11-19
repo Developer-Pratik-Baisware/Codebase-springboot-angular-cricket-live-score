@@ -1,0 +1,44 @@
+<!-- to print a variable, we need string interpolation {{xxx}} -->
+<!-- now the data is shown, but in multiple objects, hence converting it to Json body -->
+<!-- in Json the all the data is shwon in key-value pair on frotend page white space -->
+<!-- <p>{{liveMatches | json}}</p> -- just for checking purpose, to see the data is getting or not-->
+
+<div class="container">
+    <h1 class="text-4xl font-extrabold text-gray-800">
+        Live Cricekt Score
+    </h1>
+    <div class="flex flex-wrap -mx-2">
+        @for (match of liveMatches; track $index) {
+            <div class="p-2 w-full md:w-1/2 lg:w-1/4">
+                <app-match-card [match]="match"></app-match-card>
+            </div>
+        }
+        @empty {
+            <p class="text-gray-500">
+                There are no Live matches, check later
+            </p>
+        }
+    </div>
+</div>
+
+
+    <!-- 
+        sing the @for loop to use or execute mulitple divs and data here, its like a forEach loop, 
+        where match is single data from LiveMatches data collection track #index tracks the index, 
+        as we can also print or use the indexs
+     -->
+    
+    <!-- using the fields or variables of Json object, for testing purpiose -->
+    <!-- {{match.teamHeading}} -->
+    
+    <!-- 
+       using the selector of match-card component,but, as out current live component wont 
+       understand from where it is coming, as all are stand alone components, 
+       hence we importign inside live component's import in @Component, 
+       inside live @Component importing match-card component, MatchCardCoponent
+    -->
+
+    <!-- 
+        @empty will execute when ther wont be any data for @for loop if liveMatch 
+        variable not assigned with OnInit api data, then it will execute 
+    -->

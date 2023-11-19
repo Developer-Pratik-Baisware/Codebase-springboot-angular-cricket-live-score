@@ -1,0 +1,27 @@
+<!-- All the routes path will get here in app.component.html, inside router-outlet element -->
+
+<!-- Header -->
+<header class="bg-blue-500 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <!-- Branding -->
+      <div class="text-2xl font-bold">
+        CrickHub
+      </div>
+
+      <!-- Navigation -->
+      <nav class="space-x-4">
+        <a [routerLink]="'/'" class="hover:text-gray-300">Home</a>
+        <a [routerLink]="'/live'" class="hover:text-gray-300">Live Matches</a>
+        <a [routerLink]="'/history'" class="hover:text-gray-300">History</a>
+        <a [routerLink]="'/point-table'" class="hover:text-gray-300">Points Table</a>
+      </nav>
+
+      <!-- additional div to make navigational div in center -->
+      <div></div>
+    </div>
+  </header>
+
+  <!-- the dynamic component -->
+  <div class="px-28 py-8">
+    <router-outlet></router-outlet>
+  </div>

@@ -1,0 +1,25 @@
+<!-- creating a page structure including a header, body and footer -->
+
+@if(match){
+    <div class="card border border-b-orange-500 border-b-8 h-full rounded-xl mt-4 p-4 
+    bg-white shadow-lg cursor-pointer hover:bg-slate-100 hover:border-b-black transition-all">
+    <div class="header border-b-2 border-b-gray-200 pb-2">
+        <h1 class="font-bold">{{match.teamHeading}}</h1>
+        <p>{{match.matchNumberVenue}}</p>
+    </div>
+    <div class="body mt-4">
+        <div class="flex justify-between px-2">
+            <p class="font-bold">{{match.battingTeam}}</p>
+            <p class="font-bold">{{match.battingTeamScore}}</p>
+        </div>
+        <div class="flex justify-between px-2">
+            <p class="font-bold">{{match.bowlTeam}}</p>
+            <p class="font-bold">{{match.bowlTeamScore}}</p>
+        </div>
+    </div>
+    <div class="footer mt-3">
+        <p class="text-red-700">{{match.liveText}}</p>
+        <p class="text-green-700">{{match.textComplete}}</p>
+    </div>
+</div>
+}

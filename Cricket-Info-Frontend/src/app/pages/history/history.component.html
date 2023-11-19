@@ -1,0 +1,17 @@
+<div class="container">
+    <h1 class="text-4xl font-extrabold text-gray-800">
+        Match History Score
+    </h1>
+    <div class="flex flex-wrap -mx-2">
+        @for (match of allMatch; track $index) {
+            <div class="p-2 w-full md:w-1/2 lg:w-1/4">
+                <app-match-card [match]="match"></app-match-card>
+            </div>
+        }
+        @empty {
+            <p class="text-gray-500">
+                There is no history available, check later
+            </p>
+        }
+    </div>
+</div>
